@@ -180,8 +180,10 @@ ggplot(info1, aes(MAF, INFO)) +
 dev.off()
 ```
 The plots generated are shown below:
-[Imputation_infoscore](Imputation_infoscore.pdf)*Imputation info score*
-[Imputation_infoscore_MAF](Imputation_infoscore_MAF.pdf)*Imputation median info score for MAFs*
+
+![Imputation_infoscore](Imputation_infoscore.png)*Imputation info score*
+
+![Imputation_infoscore_MAF](Imputation_infoscore_MAF.png)*Imputation median info score for MAFs*
 
 ---
 
@@ -357,6 +359,11 @@ dev.off()
 
 The plots generated are shown below:
 
+![Genotyping coverage](Genotyping_coverage.png)*Genotyping coverage*
 
+![Genotyping coverage by chromosome](Genotyping_coverage_chromosome.png)*Genotyping coverage by chromosome*
 
+![Imputation overview](Imputation_overview.png)*Overview of imputation filtering*
+
+![Genotyping vs imputation coverage](GenotypingvsImputationCoverage.png)*Genotyping vs imputation coverage*
 
