@@ -11,7 +11,7 @@ Genotyping data from:
 The Fairfax genotyping data is saved in PLINK binary (bed/bim) format, under:
 /well/jknight/shiyao/data/extreme_response
 
-First, the PLINK file was checked against the HRC reference panel for strand, alleles, position, Ref/Alt assignments, and frequency differences using a script written by Will Rayner (McCarthy), which is available from [www.well.ox.ac.uk/~wraymer/tools]. This script requires the HRC reference file (download from same site), the .bim, and .frq files. The .frq file is generated using the following comands:
+First, the PLINK file was checked against the HRC reference panel for strand, alleles, position, Ref/Alt assignments, and frequency differences using a script written by Will Rayner (McCarthy), which is available from [www.well.ox.ac.uk/~wrayner/tools/index.html#Checking]. This script requires the HRC reference file (download from same site), the .bim, and .frq files. The .frq file is generated using the following comands:
 
 ```bash
 cd /well/jknight/shiyao/data/extreme_response
