@@ -33,8 +33,8 @@ This code plots the range of MAFs for the Neanderthal-introgressed SNPs in the 2
 
 ### Datasets
 Neanderthal-introgressed SNPs from:
-1. Dannemann M, Prufer K & Kelso J. Functional implications of Neandertal introgression in modern humans. Genome Biol 2017 18:61.
-2. Simonti CN *et al.* The phenotypic legacy of admixture between modern humans and Neandertals. Science 2016 351:737-41.  
+1. Dannemann M, Prufer K & Kelso J. Functional implications of Neandertal introgression in modern humans. *Genome Biol* 2017 **18**:61.
+2. Simonti CN *et al.* The phenotypic legacy of admixture between modern humans and Neandertals. *Science* 2016 **351**:737-41.  
 &nbsp;
 
 1000 genomes super populations data and all populations data from:
