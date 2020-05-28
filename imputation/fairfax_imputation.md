@@ -15,7 +15,7 @@ First, the PLINK file was checked against the HRC reference panel for strand, al
 
 ```bash
 cd /well/jknight/shiyao/data/extreme_response
-plink --bfile extreme_response --noweb --freq --out imputation/hrc_check/extreme_response
+/apps/well/plink/1.90b3/plink --bfile extreme_response --noweb --freq --out imputation/hrc_check/extreme_response
 ```
 
 The script below was then submitted to the cluster to check the PLINK file against the HRC reference panel, and is saved under: /well/jknight/shiyao/data/extreme_response/imputation/hrc_check/hrc_check_all.sh
