@@ -33,8 +33,8 @@ This code plots the expression data from African and European individuals for Ne
 
 ### Datasets
 Neanderthal-introgressed SNPs from:
-1. Dannemann M, Prufer K & Kelso J. Functional implications of Neandertal introgression in modern humans. Genome Biol 2017 18:61.
-2. Simonti CN *et al.* The phenotypic legacy of admixture between modern humans and Neandertals. Science 2016 351:737-41.  
+1. Dannemann M, Prufer K & Kelso J. Functional implications of Neandertal introgression in modern humans. *Genome Biol* 2017 **18**:61.
+2. Simonti CN *et al.* The phenotypic legacy of admixture between modern humans and Neandertals. *Science* 2016 **351**:737-41.  
 &nbsp;
 
 MAFs from:
@@ -42,8 +42,8 @@ MAFs from:
 &nbsp;
 
 Genotyped SNPs and monocyte, gene-expression data from:
-* Fairfax BP *et al.* Innate immune activity conditions the effect of regulatory variants upon monocyte gene expression. Science 2014 343:1246949.  
+* Fairfax BP *et al.* Innate immune activity conditions the effect of regulatory variants upon monocyte gene expression. *Science* 2014 **343**:1246949.  
 &nbsp;
 
 Macrophage gene-expression data from:
-* Nedelec Y *et al.* Genetic Ancestry and Natural Selection Drive Population Differences in Immune Responses to Pathogens. Cell 2016 167:657-669 e21.
+* Nedelec Y *et al.* Genetic Ancestry and Natural Selection Drive Population Differences in Immune Responses to Pathogens. *Cell* 2016 **167**:657-669e21.
