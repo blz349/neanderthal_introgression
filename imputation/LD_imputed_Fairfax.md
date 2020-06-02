@@ -49,7 +49,26 @@ grep -e 'EUR' integrated_call_samples_v3.20130502.ALL.panel | awk '{print $1, $1
 /apps/well/plink/1.90b3/plink --bfile all_autosomes --keep eur_ids.txt --make-bed --out all_autosomes_eur
 ```
 
-Next, the data was further reduced to only include SNPs that are present in both imputed and neanderthal datasets and saved under: `/well/jknight/shiyao/data/extreme_response/LD_imputed/`
+Next, the variant IDs of imputed that crossover with Neanderthal-introgressed SNPs were obtained and saved under: `/well/jknight/shiyao/data/extreme_response/imputed_LD/imputed_intersected_ids.txt`
+```python
+# Import modules
+import pandas as pd
+
+# Imputed SNPs (after removing high LD regions)
+imputed_noLD = pd.read_csv('/well/jknight/shiyao/data/extreme_response/imputation/info_0.9/fairfax_eqtl_genotyping_NoLongRangeLD.bim', sep='\t', header=None, usecols=[0, 3])
+imputed_noLD.rename(columns={0: "Chromosome", 3: "Position"}, inplace=True)
+
+# Neanderthal-introgressed SNPs
+neanderthal = pd.read_csv('/well/jknight/shiyao/data/allpop_df.csv', usecols=['Chromosome', 'Position', 'ID'])
+
+# Intersecting SNPs
+intersect = neanderthal.merge(imputed_noLD, how="inner", on=["Chromosome", "Position"])
+intersect.dropna(inplace=True)
+intersect['ID'].to_csv('/well/jknight/shiyao/data/extreme_response/imputed_LD/imputed_intersected_ids.txt',
+                       index=False, header=False)
+```
+
+The data was then further reduced to only include SNPs that are present in both imputed and neanderthal datasets and saved under: `/well/jknight/shiyao/data/extreme_response/LD_imputed/`
  
 ```bash
 /apps/well/plink/1.90b3/plink --bfile /well/jknight/shiyao/data/1000genome/all_autosomes_eur --extract imputed_intersected_ids.txt --make-bed --out all_autosomes_eur_intersected
