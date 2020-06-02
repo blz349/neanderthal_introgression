@@ -98,5 +98,5 @@ LD.sort_values(by=["CHR_B", "BP_B"])
 LD.to_csv('LD_intersected_fairfax_0.9.csv', index=False)
 ```
 
-2,195 SNPs were in LD with a Fairfax eQTL. The r<sup>2</sup> values for these SNPs are saved under: `/well/jknight/shiyao/data/extreme_response/LD_imputed/LD_intersected_fairfax_0.9.txt`
+2,195 SNPs were in LD with a Fairfax eQTL. The r<sup>2</sup> values for these SNPs are saved under: `/well/jknight/shiyao/data/extreme_response/LD_imputed/LD_intersected_fairfax_0.9.csv`
 
