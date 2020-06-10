@@ -22,7 +22,7 @@ Python3 and modules:
 This document describes submitting Fairfax genotyping data for imputation through the Sanger Imputation Service. Genotyping data was first checked against the HRC reference panel using Will Rayner (McCarthy)'s script and converted to a VCF file, which was then uploaded onto the Sanger Imputation Service server for imputation against the HRC reference panel. After imputation, the downloaded data was filtered for calls with an info score > 0.9 and QC filtered by MAF, HWE and call rate. Finally, variants within high LD regions were removed and the data was saved in PLINK binary (bed/bim) format. Plots were created in R to visualise the imputation info score range, genotyping and imputation coverage and number of variants after each stage of imputation filtering. The code detailed in this document was adapted from Katie Burnham.
 
     LD_imputed_fairfax.md
-This documents describes extracting LD r<sup>2</sup> values for imputed SNPs that crossover with Neanderthal-introgressed SNPs versus Fairfax eQTLs for European populations using the 1000 genomes dataset. r<sup>2</sup> values < 0.9 excluded and for SNPs linked to >1 Fairfax eQTLs, the eQTL with the highest r<sup>2</sup> value was kept. The data was saved in CSV format.
+This documents describes extracting LD r<sup>2</sup> values for imputed SNPs that crossover with Neanderthal-introgressed SNPs versus Fairfax eQTLs for European populations using the 1000 genomes dataset. r<sup>2</sup> values < 0.9 were excluded and for SNPs linked to >1 Fairfax eQTLs, the eQTL with the highest r<sup>2</sup> value was kept. The data was saved in CSV format. The number of eQTLs expressed per condition was calculated and the eQTL-associated genes were obtained from the Fairfax dataset.
 
 ---
 
