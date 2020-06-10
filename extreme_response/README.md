@@ -27,7 +27,11 @@ This code looks at the overlap in SNPs between Neanderthal-introgressed SNPs (fr
 &nbsp;
 
     plot_nedelec_eQTLs.ipynb
-This code plots the expression data from African and European individuals for Nedelec condition-specific eQTLs for which the same variant has also been identified as a Neanderthal-introgressed SNP. Gene expression levels were compared between African and European individuals via a two-sided T-test. Plots were divided by the 3 experimental conditions: *Listeria*-infected, *Salmonella*-infected and Non-infected.  
+This code plots the expression data from African and European individuals for Nedelec condition-specific eQTLs for which the same variant has also been identified as a Neanderthal-introgressed SNP. Gene expression levels were compared between African and European individuals via a two-sided T-test. Plots were divided by the 3 experimental conditions: *Listeria*-infected, *Salmonella*-infected and Non-infected.   
+&nbsp;
+
+    neanderthal_recomputed_fairfax_overlap.md
+This document contains code for determining the overlap between Neanderthal-introgressed SNPs (from Dannemann *et al.* and Simonti *et al.*) recomputed Fairfax *et al.* eQTLs from the EMBL-EBI eQTL catalogue. Overlapping eQTLs were filtered for p < 10<sup>-8</sup> and saved as CSV format (coordinates in GRCh38) under: `/well/jknight/shiyao/data/extreme_response/EMBL_recomputed/overlap_all_filtered.csv/`. Genes associated with the eQTLs were extracted and saved as text files under: `/well/jknight/shiyao/data/extreme_response/EMBL_recomputed/genes_cleaned_*.txt`.
 
 ---
 
@@ -46,4 +50,8 @@ Genotyped SNPs and monocyte, gene-expression data from:
 &nbsp;
 
 Macrophage gene-expression data from:
-* Nedelec Y *et al.* Genetic Ancestry and Natural Selection Drive Population Differences in Immune Responses to Pathogens. *Cell* 2016 **167**:657-669e21.
+* Nedelec Y *et al.* Genetic Ancestry and Natural Selection Drive Population Differences in Immune Responses to Pathogens. *Cell* 2016 **167**:657-669e21.  
+&nbsp;
+
+Recomputed Fairfax *et al.* eQTLs fomr:
+* [EMBL-EBI eQTL Catalogue](https://www.ebi.ac.uk/eqtl/Data_access/)  
