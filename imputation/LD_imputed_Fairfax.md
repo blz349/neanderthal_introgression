@@ -119,3 +119,56 @@ LD.to_csv('LD_intersected_fairfax_0.9.csv', index=False)
 
 2,195 SNPs were in LD with a Fairfax eQTL. The r<sup>2</sup> values for these SNPs are saved under: `/well/jknight/shiyao/data/extreme_response/LD_imputed/LD_intersected_fairfax_0.9.csv`
 
+---
+
+Information for the 92 Fairfax eQTLs in LD with imputed SNPs that crossover with Neanderthal-introgressed SNPs was obtained from the Fairfax dataset. The number of condition-specific eQTLs per condition was calculated (Table 1) and the genes associated with each eQTL was saved into a text file.
+
+```python
+# Import libraries
+import pandas as pd
+
+# Load LD data
+LD = pd.read_csv('/well/jknight/shiyao/data/extreme_response/LD_imputed/LD_intersected_fairfax_0.9.csv')
+
+# Get eQTL info
+fairfax = pd.read_csv("/well/jknight/shiyao/data/extreme_response/tab2_a_cis_eSNPs.txt", sep="\t", usecols=["Gene", "SNP.Chrm", "SNP.pos", "Min.dataset"])
+fairfax = fairfax.rename(columns={"SNP.Chrm": "CHR_A", "SNP.pos": "BP_A"})
+data = LD.merge(fairfax, how='left', on=['CHR_A', 'BP_A'])
+
+# Number of eQTLs per condition
+condition = data[['SNP_A', 'Min.dataset']].copy()
+condition.drop_duplicates(keep='first', inplace=True)
+condition = condition.groupby(['SNP_A']).agg(lambda col: ','.join(col))
+for i, row in condition.iterrows():
+    condition.at[i, 'Min.dataset'] = ','.join(set(condition.at[i, 'Min.dataset'].split(',')))
+condition['Min.dataset'].str.split(',', expand=True).stack().value_counts()
+
+# Get associated genes
+genes = data[['Gene']].copy()
+genes.drop_duplicates(keep='first', inplace=True)
+genes.Gene.to_csv('/well/jknight/shiyao/data/extreme_response/LD_imputed/genes.txt', index=False, header=False)
+
+ifn = data.loc[data['Min.dataset'] == 'IFN'][['Gene']].copy()
+ifn.drop_duplicates(keep='first', inplace=True)
+ifn.Gene.to_csv('/well/jknight/shiyao/data/extreme_response/LD_imputed/genes_ifn.txt', index=False, header=False)
+
+lps2 = data.loc[data['Min.dataset'] == 'LPS2'][['Gene']].copy()
+lps2.drop_duplicates(keep='first', inplace=True)
+lps2.Gene.to_csv('/well/jknight/shiyao/data/extreme_response/LD_imputed/genes_lps2.txt', index=False, header=False)
+
+lps24 = data.loc[data['Min.dataset'] == 'LPS24'][['Gene']].copy()
+lps24.drop_duplicates(keep='first', inplace=True)
+lps24.Gene.to_csv('/well/jknight/shiyao/data/extreme_response/LD_imputed/genes_lps24.txt', index=False, header=False)
+
+naive = data.loc[data['Min.dataset'] == 'Naive'][['Gene']].copy()
+naive.drop_duplicates(keep='first', inplace=True)
+naive.Gene.to_csv('/well/jknight/shiyao/data/extreme_response/LD_imputed/genes_naive.txt', index=False, header=False)
+```
+
+**Table 1:** Number of condition-specific eQTLs per condition
+| Condition | Number |
+| --------- | ------ |
+| LPS24 | 31 |
+| IFN | 28 |
+| LPS2 | 22 |
+| Naive | 19 |
