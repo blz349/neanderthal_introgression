@@ -12,26 +12,16 @@ Python modules:
 
 ---
 
-### Description of code
+### Directory
 
-    neanderthal_fairfax_overlap.ipynb
-This code looks at the overlap in SNPs between Neanderthal-introgressed SNPs (from Dannemann *et al.* and Simonti *et al.*) and monocyte extreme response peak eQTLs identified by Fairfax *et al*. Fisher's exact test and bootstrap test were performed to test for enrichment.  
+The extreme response code is split into the following folders:  
+
+* [fairfax](https://github.com/kshiyao/neanderthal_introgression/extreme_response/fairfax)  
+This folder contains the code for the Fairfax *et al.* (2014) dataset.
 &nbsp;
 
-    plot_fairfax_eQTLs.ipynb
-This code plots the expression data for Fairfax eQTLs for which the same variant has also been identified as a Neanderthal-introgressed SNP. eQTL plots were divided by the 4 treatment groups: IFN, LPS 2h, LPS 24h and Naive.  
-&nbsp;  
-
-    neanderthal_nedelec_overlap.ipynb
-This code looks at the overlap in SNPs between Neanderthal-introgressed SNPs (from Dannemann *et al.* and Simonti *et al.*) and cis eQTLs, reQTLs and asQTLs identified by Nedelec *et al* using macrophages that were *Listeria*-infected, *Salmonella*-infected or non-infected.  
-&nbsp;
-
-    plot_nedelec_eQTLs.ipynb
-This code plots the expression data from African and European individuals for Nedelec condition-specific eQTLs for which the same variant has also been identified as a Neanderthal-introgressed SNP. Gene expression levels were compared between African and European individuals via a two-sided T-test. Plots were divided by the 3 experimental conditions: *Listeria*-infected, *Salmonella*-infected and Non-infected.   
-&nbsp;
-
-    neanderthal_recomputed_fairfax_overlap.md
-This document contains code for determining the overlap between Neanderthal-introgressed SNPs (from Dannemann *et al.* and Simonti *et al.*) recomputed Fairfax *et al.* eQTLs from the EMBL-EBI eQTL catalogue. Overlapping eQTLs were filtered for p < 10<sup>-8</sup> and saved as CSV format (coordinates in GRCh38) under: `/well/jknight/shiyao/data/extreme_response/EMBL_recomputed/overlap_all_filtered.csv/`. Genes associated with the eQTLs were extracted and saved as text files under: `/well/jknight/shiyao/data/extreme_response/EMBL_recomputed/genes_cleaned_*.txt`.
+* [nedelec](https://github.com/kshiyao/neanderthal_introgression/extreme_response/nedelec)  
+This folder contains the code for the Nedelec *et al.* (2016) dataset.  
 
 ---
 
@@ -53,5 +43,5 @@ Macrophage gene-expression data from:
 * Nedelec Y *et al.* Genetic Ancestry and Natural Selection Drive Population Differences in Immune Responses to Pathogens. *Cell* 2016 **167**:657-669e21.  
 &nbsp;
 
-Recomputed Fairfax *et al.* eQTLs fomr:
+Recomputed Fairfax *et al.* and Nedelec eQTLs *et al.* from:
 * [EMBL-EBI eQTL Catalogue](https://www.ebi.ac.uk/eqtl/Data_access/)  
