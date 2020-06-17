@@ -41,21 +41,21 @@ This VCF file was then converted into PLINK format (bed/bim) via the command bel
 
 ---
 
-European sample IDs was obtained from the sample panel and used to reduce the data to European individuals. The PLINK file was saved under: `/well/jknight/shiyao/data/1000genome/`
+European sample IDs was obtained from the sample panel and used to reduce the data to European individuals. The PLINK file was saved under: `/well/jknight/shiyao/data/1000genome/merged`
 
 ```bash
 grep -e 'EUR' integrated_call_samples_v3.20130502.ALL.panel | awk '{print $1, $1}' > ../eur_ids.txt
 
-/apps/well/plink/1.90b3/plink --bfile all_autosomes --keep eur_ids.txt --make-bed --out all_autosomes_eur
+/apps/well/plink/1.90b3/plink --bfile merged/all_autosomes --keep eur_ids.txt --make-bed --out merged/all_autosomes_eur
 ```
 
-Next, the variant IDs of imputed that crossover with Neanderthal-introgressed SNPs were obtained and saved under: `/well/jknight/shiyao/data/extreme_response/imputed_LD/imputed_intersected_ids.txt`
+Next, the variant IDs of imputed that crossover with Neanderthal-introgressed SNPs were obtained and saved under: `/well/jknight/shiyao/data/fairfax/imputed_LD/imputed_intersected_ids.txt`
 ```python
 # Import modules
 import pandas as pd
 
 # Imputed SNPs (after removing high LD regions)
-imputed_noLD = pd.read_csv('/well/jknight/shiyao/data/extreme_response/imputation/info_0.9/fairfax_eqtl_genotyping_NoLongRangeLD.bim', sep='\t', header=None, usecols=[0, 3])
+imputed_noLD = pd.read_csv('/well/jknight/shiyao/data/fairfax/imputation/info_0.9/fairfax_eqtl_genotyping_NoLongRangeLD.bim', sep='\t', header=None, usecols=[0, 3])
 imputed_noLD.rename(columns={0: "Chromosome", 3: "Position"}, inplace=True)
 
 # Neanderthal-introgressed SNPs
@@ -64,14 +64,14 @@ neanderthal = pd.read_csv('/well/jknight/shiyao/data/allpop_df.csv', usecols=['C
 # Intersecting SNPs
 intersect = neanderthal.merge(imputed_noLD, how="inner", on=["Chromosome", "Position"])
 intersect.dropna(inplace=True)
-intersect['ID'].to_csv('/well/jknight/shiyao/data/extreme_response/imputed_LD/imputed_intersected_ids.txt',
+intersect['ID'].to_csv('/well/jknight/shiyao/data/fairfax/imputed_LD/imputed_intersected_ids.txt',
                        index=False, header=False)
 ```
 
-The data was then further reduced to only include SNPs that are present in both imputed and neanderthal datasets and saved under: `/well/jknight/shiyao/data/extreme_response/LD_imputed/`
+The data was then further reduced to only include SNPs that are present in both imputed and neanderthal datasets and saved under: `/well/jknight/shiyao/data/fairfax/LD_imputed/`
  
 ```bash
-/apps/well/plink/1.90b3/plink --bfile /well/jknight/shiyao/data/1000genome/all_autosomes_eur --extract imputed_intersected_ids.txt --make-bed --out all_autosomes_eur_intersected
+/apps/well/plink/1.90b3/plink --bfile /well/jknight/shiyao/data/1000genome/merged/all_autosomes_eur --extract imputed_intersected_ids.txt --make-bed --out all_autosomes_eur_intersected
 ```
 
 ---
@@ -82,13 +82,13 @@ The list of Fairfax eQTL variant IDs was obtained using the following command:
 awk 'NR > 1 {print $1}' tab2_a_cis_eSNPs.txt | sort | uniq > LD_imputed/fairfax_eQTLs.txt
 ```
 
-The LD scores for intersecting SNPs with Fairfax eQTLs was obtained using PLINK and saved under: `/well/jknight/shiyao/data/extreme_response/LD_imputed/`. r2 values < 0.9 were excluded.
+The LD scores for intersecting SNPs with Fairfax eQTLs was obtained using PLINK and saved under: `/well/jknight/shiyao/data/fairfax/LD_imputed/`. r2 values < 0.9 were excluded.
 
 ```bash
 /apps/well/plink/1.90b3/plink --bfile all_autosomes_eur_intersected --r2 --ld-window 100000 --ld-window-kb 10000000 --ld-window-r2 0.9 --ld-snp-list fairfax_eQTLs.txt --out LD_intersected_fairfax_0.9
 ```
 
-Finally, the .ld file was converted into a text file and saved under: `/well/jknight/shiyao/data/extreme_response/LD_imputed/`
+Finally, the .ld file was converted into a text file and saved under: `/well/jknight/shiyao/data/fairfax/LD_imputed/`
 ```bash
 awk '{print $1, $2, $3, $4, $5, $6, $7}' LD_intersected_fairfax_0.9.ld > LD_intersected_fairfax_0.9.txt
 ```
@@ -102,7 +102,7 @@ Python was used to calculate the number of SNPs (out of 76,453 intersecting SNPs
 import pandas as pd
 
 # Load LD data
-LD = pd.read_csv('/well/jknight/shiyao/data/extreme_response/LD_imputed/LD_intersected_fairfax_0.9.txt', sep=' ')
+LD = pd.read_csv('/well/jknight/shiyao/data/fairfax/LD_imputed/LD_intersected_fairfax_0.9.txt', sep=' ')
 
 # Keep highest R2 value for SNPs linked to >1 eQTLs
 LD[LD.duplicated("SNP_B", keep=False)]
@@ -117,7 +117,7 @@ LD.sort_values(by=["CHR_B", "BP_B"])
 LD.to_csv('LD_intersected_fairfax_0.9.csv', index=False)
 ```
 
-2,195 SNPs were in LD with a Fairfax eQTL. The r<sup>2</sup> values for these SNPs are saved under: `/well/jknight/shiyao/data/extreme_response/LD_imputed/LD_intersected_fairfax_0.9.csv`
+2,195 SNPs were in LD with a Fairfax eQTL. The r<sup>2</sup> values for these SNPs are saved under: `/well/jknight/shiyao/data/fairfax/LD_imputed/LD_intersected_fairfax_0.9.csv`
 
 ---
 
@@ -128,10 +128,10 @@ Information for the 92 Fairfax eQTLs in LD with imputed SNPs that crossover with
 import pandas as pd
 
 # Load LD data
-LD = pd.read_csv('/well/jknight/shiyao/data/extreme_response/LD_imputed/LD_intersected_fairfax_0.9.csv')
+LD = pd.read_csv('/well/jknight/shiyao/data/fairfax/LD_imputed/LD_intersected_fairfax_0.9.csv')
 
 # Get eQTL info
-fairfax = pd.read_csv("/well/jknight/shiyao/data/extreme_response/tab2_a_cis_eSNPs.txt", sep="\t", usecols=["Gene", "SNP.Chrm", "SNP.pos", "Min.dataset"])
+fairfax = pd.read_csv("/well/jknight/shiyao/data/fairfax/tab2_a_cis_eSNPs.txt", sep="\t", usecols=["Gene", "SNP.Chrm", "SNP.pos", "Min.dataset"])
 fairfax = fairfax.rename(columns={"SNP.Chrm": "CHR_A", "SNP.pos": "BP_A"})
 data = LD.merge(fairfax, how='left', on=['CHR_A', 'BP_A'])
 
@@ -146,23 +146,23 @@ condition['Min.dataset'].str.split(',', expand=True).stack().value_counts()
 # Get associated genes
 genes = data[['Gene']].copy()
 genes.drop_duplicates(keep='first', inplace=True)
-genes.Gene.to_csv('/well/jknight/shiyao/data/extreme_response/LD_imputed/genes.txt', index=False, header=False)
+genes.Gene.to_csv('/well/jknight/shiyao/data/fairfax/LD_imputed/genes.txt', index=False, header=False)
 
 ifn = data.loc[data['Min.dataset'] == 'IFN'][['Gene']].copy()
 ifn.drop_duplicates(keep='first', inplace=True)
-ifn.Gene.to_csv('/well/jknight/shiyao/data/extreme_response/LD_imputed/genes_ifn.txt', index=False, header=False)
+ifn.Gene.to_csv('/well/jknight/shiyao/data/fairfax/LD_imputed/genes_ifn.txt', index=False, header=False)
 
 lps2 = data.loc[data['Min.dataset'] == 'LPS2'][['Gene']].copy()
 lps2.drop_duplicates(keep='first', inplace=True)
-lps2.Gene.to_csv('/well/jknight/shiyao/data/extreme_response/LD_imputed/genes_lps2.txt', index=False, header=False)
+lps2.Gene.to_csv('/well/jknight/shiyao/data/fairfax/LD_imputed/genes_lps2.txt', index=False, header=False)
 
 lps24 = data.loc[data['Min.dataset'] == 'LPS24'][['Gene']].copy()
 lps24.drop_duplicates(keep='first', inplace=True)
-lps24.Gene.to_csv('/well/jknight/shiyao/data/extreme_response/LD_imputed/genes_lps24.txt', index=False, header=False)
+lps24.Gene.to_csv('/well/jknight/shiyao/data/fairfax/LD_imputed/genes_lps24.txt', index=False, header=False)
 
 naive = data.loc[data['Min.dataset'] == 'Naive'][['Gene']].copy()
 naive.drop_duplicates(keep='first', inplace=True)
-naive.Gene.to_csv('/well/jknight/shiyao/data/extreme_response/LD_imputed/genes_naive.txt', index=False, header=False)
+naive.Gene.to_csv('/well/jknight/shiyao/data/fairfax/LD_imputed/genes_naive.txt', index=False, header=False)
 ```
 
 **Table 1:** Number of condition-specific eQTLs per condition
