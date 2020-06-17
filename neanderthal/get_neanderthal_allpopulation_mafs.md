@@ -25,7 +25,7 @@ def get_pop(pop='YRI'):
     # Loop over chromosomes 1-22
     starter = True
     for i in range(1, 23):
-        file_name = '/well/jknight/shiyao/data/all_populations/' + pop + '/' + pop + '_chr' + str(i) + '_freq_genome.txt'
+        file_name = '/well/jknight/shiyao/data/1000genome/all_populations/' + pop + '/' + pop + '_chr' + str(i) + '_freq_genome.txt'
         
         # Load population dataset
         df = pd.read_csv(file_name, sep='\t', header=None)
@@ -63,7 +63,7 @@ def get_pop(pop='YRI'):
             pop_df.rename(columns={'ID_x': 'ID', 'Major_x': 'Major', 'Minor_x': 'Minor', pop + '_x': pop}, inplace=True)
 
     # Save pop df
-    pop_df.to_csv("/well/jknight/shiyao/data/pop_df/pop_"+pop+"_df.csv")
+    pop_df.to_csv("/well/jknight/shiyao/data/1000genome/pop_df/pop_"+pop+"_df.csv")
  ```
  
 Next, the following script was executed to create a *.sh file to run the "get_pop" function for each of the 26 populations and submit them to the cluster as separate jobs.
@@ -75,7 +75,7 @@ from glob import glob
 
 # Get list of populations
 populations = []
-files = glob('/well/jknight/shiyao/data/all_populations/*')
+files = glob('/well/jknight/shiyao/data/1000genome/all_populations/*')
 for file_name in files:
     temp = file_name.split('/')
     populations.append(temp[-1])
@@ -129,7 +129,7 @@ import pandas as pd
 
 # Get list of populations
 populations = []
-files = glob('/well/jknight/shiyao/data/all_populations/*')
+files = glob('/well/jknight/shiyao/data/1000genome/all_populations/*')
 for file_name in files:
     temp = file_name.split('/')
     populations.append(temp[-1])
@@ -138,7 +138,7 @@ populations.remove('CHS') # CHS population data corrupted
 # Create list of pop_dfs
 dfs = []
 for pop in populations:
-    df = pd.read_csv("/well/jknight/shiyao/data/pop_df/pop_" + pop + "_df.csv")
+    df = pd.read_csv("/well/jknight/shiyao/data/1000genome/pop_df/pop_" + pop + "_df.csv")
     df = df.drop('Unnamed: 0', axis=1)
     df[['Source', 'ID', 'Major', 'Minor']] = df[['Source', 'ID', 'Major', 'Minor']].astype('str')
     dfs.append(df)
