@@ -22,6 +22,10 @@ This code looks at the overlap in SNPs between Neanderthal-introgressed SNPs (fr
 This code plots the expression data for Fairfax eQTLs for which the same variant has also been identified as a Neanderthal-introgressed SNP. eQTL plots were divided by the 4 treatment groups: IFN, LPS 2h, LPS 24h and Naive.  
 &nbsp;  
 
+    imputation
+This folder contains the code for imputing Fairfax eQTLs using the Sanger Imputation Service and calculating the overlap with Neanderthal-introgressed SNPs and LD scores for imputed SNPs.  
+&nbsp;
+
     neanderthal_recomputed_fairfax_overlap.md
 This document contains code for determining the overlap between Neanderthal-introgressed SNPs (from Dannemann *et al.* and Simonti *et al.*) recomputed Fairfax *et al.* eQTLs from the EMBL-EBI eQTL catalogue. Overlapping eQTLs were filtered for p < 10<sup>-8</sup> and saved as CSV format (coordinates in GRCh38) under: `/well/jknight/shiyao/data/extreme_response/EMBL_recomputed/overlap_all_filtered.csv/`. Genes associated with the eQTLs were extracted and saved as text files under: `/well/jknight/shiyao/data/extreme_response/EMBL_recomputed/genes_cleaned_*.txt`.  
 
