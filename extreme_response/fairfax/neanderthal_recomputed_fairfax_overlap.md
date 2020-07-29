@@ -2,9 +2,9 @@
 
 This document contains code to explore if any Neanderthal-introgressed SNPs are present in the list of recomputed eQTLs for Fairfax *et al.* (2014) from the EMBL-EBI eQTL catalogue. Overlapping recomputed eQTLs were filtered for p-value < 10<sup>-8</sup> and saved in CSV format. Gene symbols of genes associated with these eQTLs were obtained and saved to text files.
 
-First, recomputed eQTLs for Fairfax *et al.* (2014) were downloaded from the EMBL-EBI eQTL catalogue [ftp://ftp.ebi.ac.uk/pub/databases/spot/eQTL/csv/Fairfax_2014/microarray/] and saved under: `/well/jknight/shiyao/data/extreme_response/EMBL_recomputed/`.  
+First, recomputed eQTLs for Fairfax *et al.* (2014) were downloaded from the EMBL-EBI eQTL catalogue [ftp://ftp.ebi.ac.uk/pub/databases/spot/eQTL/csv/Fairfax_2014/microarray/] and saved under: `/well/jknight/shiyao/data/fairfax/EMBL_recomputed/`.  
 
-As the EMBL-EBI eQTL catalogue uses GRCh38 coordinates, coordinates of Neanderthal-introgressed SNPs were first converted from GRCh37 to GRCh38 and saved in CSV format under: `/well/jknight/shiyao/data/extreme_response/EMBL_recomputed/comparison_df_hg38.csv`. This requires the `hg19ToHg38.over.chain.gz` file downloaded from [USBC](https://hgdownload.soe.ucsc.edu/gbdb/hg19/liftOver/). 
+As the EMBL-EBI eQTL catalogue uses GRCh38 coordinates, coordinates of Neanderthal-introgressed SNPs were first converted from GRCh37 to GRCh38 and saved in CSV format under: `/well/jknight/shiyao/data/fairfax/EMBL_recomputed/comparison_df_hg38.csv`. This requires the `hg19ToHg38.over.chain.gz` file downloaded from [USBC](https://hgdownload.soe.ucsc.edu/gbdb/hg19/liftOver/). 
 
 ```python
 # Import modules
