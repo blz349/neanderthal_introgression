@@ -1,14 +1,17 @@
 # Extreme response code
 
 ### Requirements:
-Python 3
-
-Python modules:
+Python 3 and modules:
 * pandas 1.0.3
 * seaborn 0.10.0
 * Matplotlib 3.1.1
 * SciPy 1.4.1
 * plinkio 0.9.7
+* networkx 2.4
+
+R and packages:
+* XGR
+* RCircos
 
 ---
 
@@ -16,12 +19,20 @@ Python modules:
 
 The extreme response code is split into the following folders:  
 
-* [fairfax](https://github.com/kshiyao/neanderthal_introgression/extreme_response/fairfax)  
+* [alasoo](https://github.com/kshiyao/neanderthal_introgression/tree/master/extreme_response/alasoo)  
+This folder contains the code for the recomputed Alasoo *et al.* (2018) dataset.  
+&nbsp;
+
+* [fairfax](https://github.com/kshiyao/neanderthal_introgression/tree/master/extreme_response/fairfax)  
 This folder contains the code for the Fairfax *et al.* (2014) dataset.
 &nbsp;
 
-* [nedelec](https://github.com/kshiyao/neanderthal_introgression/extreme_response/nedelec)  
+* [nedelec](https://github.com/kshiyao/neanderthal_introgression/tree/master/extreme_response/nedelec)  
 This folder contains the code for the Nedelec *et al.* (2016) dataset.  
+&nbsp;
+
+* [quach](https://github.com/kshiyao/neanderthal_introgression/tree/master/extreme_response/quach)  
+This folder contains the code for the recomputed Quach *et al.* (2016) dataset.  
 
 ---
 
@@ -43,5 +54,5 @@ Macrophage gene-expression data from:
 * Nedelec Y *et al.* Genetic Ancestry and Natural Selection Drive Population Differences in Immune Responses to Pathogens. *Cell* 2016 **167**:657-669e21.  
 &nbsp;
 
-Recomputed Fairfax *et al.* and Nedelec eQTLs *et al.* from:
+Recomputed eQTLs from:
 * [EMBL-EBI eQTL Catalogue](https://www.ebi.ac.uk/eqtl/Data_access/)  
