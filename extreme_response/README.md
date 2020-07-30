@@ -21,15 +21,12 @@ The extreme response code is split into the following folders:
 
 * [alasoo](https://github.com/kshiyao/neanderthal_introgression/tree/master/extreme_response/alasoo)  
 This folder contains the code for the recomputed Alasoo *et al.* (2018) dataset.  
-&nbsp;
 
 * [fairfax](https://github.com/kshiyao/neanderthal_introgression/tree/master/extreme_response/fairfax)  
-This folder contains the code for the Fairfax *et al.* (2014) dataset.
-&nbsp;
+This folder contains the code for the Fairfax *et al.* (2014) dataset.  
 
 * [nedelec](https://github.com/kshiyao/neanderthal_introgression/tree/master/extreme_response/nedelec)  
 This folder contains the code for the Nedelec *et al.* (2016) dataset.  
-&nbsp;
 
 * [quach](https://github.com/kshiyao/neanderthal_introgression/tree/master/extreme_response/quach)  
 This folder contains the code for the recomputed Quach *et al.* (2016) dataset.  
