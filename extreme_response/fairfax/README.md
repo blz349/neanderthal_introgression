@@ -7,6 +7,7 @@ Python 3 and modules:
 * Matplotlib 3.1.1
 * SciPy 1.4.1
 * plinkio 0.9.7
+* networkx 2.4
 
 R and packages:
 * XGR
@@ -33,7 +34,7 @@ This document contains code for determining the overlap between Neanderthal-intr
 &nbsp;
 
     plot_recomputed_fairfax_networks.ipynb
-This code plots the network of genes associated with eQTLs, which have been identified as Neanderthal-intorgressed, using subnet results obtained from the R package XGR, for each of the 4 conditions: IFN, LPS 2h, LPS 24h and Naive.
+This code plots the network of genes associated with eQTLs, which have been identified as Neanderthal-intorgressed, using subnet results obtained from the R package XGR, for each of the 4 conditions: IFN, LPS 2h, LPS 24h and Naive.  
 &nbsp;
 
     introgressed_HLA_types.ipynb
