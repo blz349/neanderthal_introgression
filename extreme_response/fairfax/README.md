@@ -33,12 +33,16 @@ This folder contains the code for imputing Fairfax eQTLs using the Sanger Imputa
 This document contains code for determining the overlap between Neanderthal-introgressed SNPs (from Dannemann *et al.* and Simonti *et al.*) and recomputed Fairfax *et al.* eQTLs from the EMBL-EBI eQTL catalogue. Overlapping eQTLs were filtered for p < 10<sup>-8</sup> and saved as CSV format (coordinates in GRCh38) under: `/well/jknight/shiyao/data/fairfax/EMBL_recomputed/overlap_all_filtered.csv/`. Genes associated with the eQTLs were extracted and saved as text files under: `/well/jknight/shiyao/data/fairfax/EMBL_recomputed/genes_cleaned_*.txt`.  
 &nbsp;
 
+    plot_recomputed_fairfax_pathways.ipynb
+This code plots the pathways in which genes associated with Neanderthal-introgressed eQTLs were enriched in, using pathway enrichment results obtained from the R package XGR, for each of the 4 conditions: IFN, LPS 2h, LPS 24h and Naive.  
+&nbsp;
+
     plot_recomputed_fairfax_networks.ipynb
 This code plots the network of genes associated with eQTLs, which have been identified as Neanderthal-intorgressed, using subnet results obtained from the R package XGR, for each of the 4 conditions: IFN, LPS 2h, LPS 24h and Naive.  
 &nbsp;
 
     introgressed_HLA_types.ipynb
-This code calculates the number of individuals with each HLA type in the Fairfax *et al.* dataset and plots the HLA gene expression for putative Neanderthal-derived HLA types: HLA-A\*02:01, HLA-C\*07:02, HLA-B\*07:02 and HLA-B\*51:01.  
+This code calculates the number of individuals with each HLA type in the Fairfax *et al.* dataset and plots the HLA gene expression for putative Neanderthal-derived HLA types: HLA-A\*02:01, HLA-C\*07:02, HLA-B\*07:02 and HLA-B\*51:01. For HLA-C\*07:02, t-tests were performed to check if number of HLA-C\*07:02 alleles signficantly altered expression of *HLA-C* or *KIR2DL3*, and Fisher's exact test was used to test for enrichment of KIR2DL2/3 in individuals with HLA-C\*07:02.
 
 ---
 
