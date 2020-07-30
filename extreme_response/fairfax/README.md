@@ -8,10 +8,13 @@ Python 3 and modules:
 * SciPy 1.4.1
 * plinkio 0.9.7
 * networkx 2.4
+* statsmodels 0.11.1
 
 R and packages:
 * XGR
 * RCircos
+* Tidyverse
+* genio
 
 ---
 
@@ -23,6 +26,10 @@ This code looks at the overlap in SNPs between Neanderthal-introgressed SNPs (fr
 
     plot_fairfax_eQTLs.ipynb
 This code plots the expression data for Fairfax eQTLs for which the same variant has also been identified as a Neanderthal-introgressed SNP. eQTL plots were divided by the 4 treatment groups: IFN, LPS 2h, LPS 24h and Naive.  
+&nbsp;  
+
+    compute_rs2066807_STAT2_eQTL.ipynb
+This code plots the *STAT2* expression for rs2066807 and calculates the p-value and FDR of the association for each of the 4 contexts: IFN, LPS 2h, LPS 24h and Naive.  
 &nbsp;  
 
     imputation
