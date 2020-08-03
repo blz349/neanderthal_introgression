@@ -26,6 +26,10 @@ This code extracts the MAFs for Neanderthal-introgressed SNPs in the 1000 genome
 This documents describes extracting MAFs for Neanderthal-introgressed SNPs from the 1000 genomes all populations dataset which comprises 26 populations. MAFs were first extracted for each population and saved in .csv format under: `/well/jknight/shiyao/data/1000genome/pop_dfs`. The .csv files for all 26 populations were then combined into a single .csv file containing the following information for the Neanderthal-introgressed SNPs: chromosome, position, source, ID, major allele, minor allele and MAFs in each of the 26 populations. This is saved under: `/well/jknight/shiyao/data/allpop_df.csv`  
 &nbsp;
 
+    fix_neanderthal_mafs.md
+This documents describes fixing the minor allele annotation and MAFs for Neanderthal-introgressed SNPs with incorrect minor allele annotations using allele counts from the 1000 genomes all populations dataset. The following information for the Neanderthal-introgressed SNPs: chromosome, position, source, ID, major allele, minor allele (reannotated) and MAFs (fixed) in each of the 26 populations, were saved as a .csv file under: `/well/jknight/shiyao/data/allpop_fixed.csv`  
+&nbsp;
+
     neanderthal_allpopulation_mafs.ipynb
 This code plots the range of MAFs for the Neanderthal-introgressed SNPs in the 26 1000 genomes populations, and in particular in the 5 African populations. The number of Neanderthal-introgressed SNPs with MAF > 0.01 in African populations was calculated and visualised using venn diagrams.
 
