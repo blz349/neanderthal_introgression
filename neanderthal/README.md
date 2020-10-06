@@ -35,7 +35,7 @@ This documents describes identifying the Neanderthal-introgressed SNPs (Danneman
 &nbsp;
 
     neanderthal_allpopulation_mafs.ipynb
-This code plots the range of MAFs for the Neanderthal-introgressed SNPs in the 26 1000 genomes populations, and in particular in the 5 African populations. The number of Neanderthal-introgressed SNPs with MAF > 0.01 in African populations was calculated and visualised using venn diagrams.
+This code plots the range of MAFs for the Neanderthal-introgressed SNPs (present in Chen introgressed sequences) in the 26 1000 genomes populations, and in particular in the 5 African populations. The number of Neanderthal-introgressed SNPs with MAF > 0.01 in African populations was calculated and visualised using venn diagrams.
 
 ---
 
