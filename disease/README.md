@@ -10,7 +10,7 @@ Python modules:
 
 ### Description of code
     neanderthal_gwas.ipynb
-This code investigates if Neanderthal-introgressed SNPs have been associated with any immune-related diseases, including infectious diseases, allergic diseases, autoimmune diseases and autoinflammatory diseases, using data from the NHGRI-EBI GWAS Catalog.
+This code investigates if Neanderthal-introgressed SNPs (present in Chen introgressed sequences) have been associated with any immune-related diseases, including infectious diseases, allergic diseases, autoimmune diseases and autoinflammatory diseases, using data from the NHGRI-EBI GWAS Catalog.
 
 ---
 
@@ -18,7 +18,11 @@ This code investigates if Neanderthal-introgressed SNPs have been associated wit
 Neanderthal-introgressed SNPs from:
 1. Dannemann M, Prufer K & Kelso J. Functional implications of Neandertal introgression in modern humans. *Genome Biol* 2017 **18**:61.
 2. Simonti CN *et al.* The phenotypic legacy of admixture between modern humans and Neandertals. *Science* 2016 **351**:737-41.  
-&nbsp;
+&nbsp; 
+
+Neanderthal-introgressed sequences by Chen *et al.* from:
+* Chen L *et al.* Identifying and interpreting apparent Neanderthal ancestry in African individuals. *Cell* 2020 **180**:677-687.  
+&nbsp; 
 
 MAFs from:
 * [1000 genomes](https://www.internationalgenome.org/data/)  
