@@ -21,7 +21,7 @@ R and packages:
 ### Description of code
 
     neanderthal_fairfax_overlap.ipynb
-This code looks at the overlap in SNPs between Neanderthal-introgressed SNPs (from Dannemann *et al.* and Simonti *et al.*) and monocyte extreme response peak eQTLs identified by Fairfax *et al*. Fisher's exact test and bootstrap test were performed to test for enrichment.  
+This code looks at the overlap between Dannemann/Simonti Neanderthal-introgressed SNPs (present in Chen introgressed sequences) and monocyte extreme response peak eQTLs identified by Fairfax *et al*. Fisher's exact test and bootstrap test were performed to test for enrichment.  
 &nbsp;
 
     plot_fairfax_eQTLs.ipynb
@@ -37,7 +37,7 @@ This folder contains the code for imputing Fairfax eQTLs using the Sanger Imputa
 &nbsp;
 
     neanderthal_recomputed_fairfax_overlap.md
-This document contains code for determining the overlap between Neanderthal-introgressed SNPs (from Dannemann *et al.* and Simonti *et al.*) and recomputed Fairfax *et al.* eQTLs from the EMBL-EBI eQTL catalogue. Overlapping eQTLs were filtered for p < 10<sup>-8</sup> and saved as CSV format (coordinates in GRCh38) under: `/well/jknight/shiyao/data/fairfax/EMBL_recomputed/overlap_all_filtered.csv/`. Genes associated with the eQTLs were extracted and saved as text files under: `/well/jknight/shiyao/data/fairfax/EMBL_recomputed/genes_cleaned_*.txt`.  
+This document contains code for determining the overlap between Dannemann/Simonti Neanderthal-introgressed SNPs (from Dannemann *et al.* and Simonti *et al.*) and recomputed Fairfax *et al.* eQTLs from the EMBL-EBI eQTL catalogue. Overlapping eQTLs were filtered for p < 10<sup>-8</sup> and saved as CSV format (coordinates in GRCh38) under: `/well/jknight/shiyao/data/fairfax/EMBL_recomputed/overlap_all_filtered.csv/`. Genes associated with the eQTLs were extracted and saved as text files under: `/well/jknight/shiyao/data/fairfax/EMBL_recomputed/genes_cleaned_*.txt`.  
 &nbsp;
 
     plot_recomputed_fairfax_pathways.ipynb
@@ -45,7 +45,7 @@ This code plots the pathways in which genes associated with Neanderthal-introgre
 &nbsp;
 
     plot_recomputed_fairfax_networks.ipynb
-This code plots the network of genes associated with eQTLs, which have been identified as Neanderthal-intorgressed, using subnet results obtained from the R package XGR, for each of the 4 conditions: IFN, LPS 2h, LPS 24h and Naive.  
+This code plots the network of genes associated with eQTLs, which have been identified as Neanderthal-introgressed, using subnet results obtained from the R package XGR, for each of the 4 conditions: IFN, LPS 2h, LPS 24h and Naive.  
 &nbsp;
 
     introgressed_HLA_types.ipynb
@@ -57,6 +57,10 @@ This code calculates the number of individuals with each HLA type in the Fairfax
 Neanderthal-introgressed SNPs from:
 1. Dannemann M, Prufer K & Kelso J. Functional implications of Neandertal introgression in modern humans. *Genome Biol* 2017 **18**:61.
 2. Simonti CN *et al.* The phenotypic legacy of admixture between modern humans and Neandertals. *Science* 2016 **351**:737-41.  
+&nbsp;
+
+Neanderthal-introgressed sequences by Chen *et al.* from:
+* Chen L *et al.* Identifying and interpreting apparent Neanderthal ancestry in African individuals. *Cell* 2020 **180**:677-687. 
 &nbsp;
 
 MAFs from:
