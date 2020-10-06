@@ -30,6 +30,10 @@ This documents describes extracting MAFs for Neanderthal-introgressed SNPs from 
 This documents describes fixing the minor allele annotation and MAFs for Neanderthal-introgressed SNPs with incorrect minor allele annotations using allele counts from the 1000 genomes all populations dataset. The following information for the Neanderthal-introgressed SNPs: chromosome, position, source, ID, major allele, minor allele (reannotated) and MAFs (fixed) in each of the 26 populations, were saved as a .csv file under: `/well/jknight/shiyao/data/allpop_fixed.csv`  
 &nbsp;
 
+    get_chen_neanderthal_snps.md
+This documents describes identifying the Neanderthal-introgressed SNPs (Dannemann and Simonti) that were present in Neanderthal-introgressed sequences identified by Chen *et al.* (2020). The chromosome and position of these SNPs were saved as a .csv file under: `/well/jknight/shiyao/data/chen/neanderthal_check.csv`  
+&nbsp;
+
     neanderthal_allpopulation_mafs.ipynb
 This code plots the range of MAFs for the Neanderthal-introgressed SNPs in the 26 1000 genomes populations, and in particular in the 5 African populations. The number of Neanderthal-introgressed SNPs with MAF > 0.01 in African populations was calculated and visualised using venn diagrams.
 
@@ -39,6 +43,10 @@ This code plots the range of MAFs for the Neanderthal-introgressed SNPs in the 2
 Neanderthal-introgressed SNPs from:
 1. Dannemann M, Prufer K & Kelso J. Functional implications of Neandertal introgression in modern humans. *Genome Biol* 2017 **18**:61.
 2. Simonti CN *et al.* The phenotypic legacy of admixture between modern humans and Neandertals. *Science* 2016 **351**:737-41.  
+&nbsp;
+
+Neanderthal-introgressed sequences by Chen *et al.* from:
+* Chen L *et al.* Identifying and interpreting apparent Neanderthal ancestry in African individuals. *Cell* 2020 **180**:677-687.  
 &nbsp;
 
 1000 genomes super populations data and all populations data from:
